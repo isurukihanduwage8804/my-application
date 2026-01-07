@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS
+# Custom CSS for a professional look
 st.markdown("""
     <style>
     .main { background-color: #f4f7f6; }
@@ -42,12 +42,18 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### 📞 Contact Details")
 st.sidebar.write("🏠 **Address:** 356/14, Naleen Jayasinghe Road, Pilagoda, Baddegama.")
 st.sidebar.write("📅 **DOB:** 18th April 1988 (Age: 37)")
-st.sidebar.write("📧 **Email:** dinesh.isuru@example.com")
+st.sidebar.write("📧 **Email:** isurukihanduwage8804@gmail.com")
 
 # Main Header
 col1, col2 = st.columns([1, 4])
 with col1:
-    st.image("https://cdn-icons-png.flaticon.com/512/3135/3135715.png", width=160)
+    # -------------------------------------------------------------------------
+    # උපදෙස්: ඔබ ලබාදුන් ඡායාරූපය GitHub එකට Upload කර එහි Link එක මෙතනට දාන්න.
+    # දැනට මම ඔබ එවූ ඡායාරූපය වෙනුවට Placeholder එකක් දමා ඇත.
+    # -------------------------------------------------------------------------
+    my_photo_url = "https://raw.githubusercontent.com/your-username/your-repo/main/your-photo.jpg" 
+    st.image(my_photo_url, width=200, caption="Dinesh Isuru Sampath")
+
 with col2:
     st.title("Dinesh Isuru Sampath")
     st.subheader("Senior Software Developer & ML Specialist")
@@ -73,7 +79,6 @@ st.divider()
 # Experience Section
 st.header("💼 Professional Journey")
 
-# HTML structure for experience card
 experience_html = """
 <div class="job-card">
     <h3>Senior Full-Stack Developer (2015 - Present)</h3>
@@ -90,3 +95,26 @@ st.markdown(experience_html, unsafe_allow_html=True)
 
 # Projects Section
 st.header("🚀 Key Projects")
+col_p1, col_p2 = st.columns(2)
+
+with col_p1:
+    with st.expander("Production-Grade ML Script (app.py)", expanded=True):
+        st.write("Core implementation of ML design and infrastructure optimization. This script manages data processing and model deployment workflows.")
+        st.markdown("[🔗 View Source on GitHub](https://github.com/your-github-username)")
+
+with col_p2:
+    with st.expander("Cricket Performance Analytics Tool"):
+        st.write("Specialized analytics engine for T20 match data. Provides player performance metrics and predictive insights.")
+        chart_data = pd.DataFrame({'Match': ['Match 1', 'Match 2', 'Match 3', 'Match 4'], 'Accuracy (%)': [82, 88, 91, 85]})
+        st.line_chart(chart_data, x='Match', y='Accuracy (%)')
+
+st.divider()
+
+# Education & Experience Note
+st.header("🎓 Academic & Practical Foundation")
+st.info("**Equivalent Practical Experience:** 10 Years of verified expertise in software development and design.")
+st.write("Education: G.C.E. Advanced Level (A/L) and Ordinary Level (O/L).")
+
+# Footer
+st.markdown("---")
+st.markdown("<p style='text-align: center; color: grey;'>Built with Streamlit & Python | 2026 Dinesh Isuru Sampath</p>", unsafe_allow_html=True)
