@@ -8,28 +8,23 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS for a professional look
+# Custom CSS
 st.markdown("""
     <style>
     .main { background-color: #f4f7f6; }
     .job-card {
-        background-color: white;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        margin-bottom: 20px;
-        border-left: 5px solid #007bff;
-        color: #1f1f1f;
+        background-color: white; padding: 25px; border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px;
+        border-left: 5px solid #007bff; color: #1f1f1f;
     }
     .skill-tag {
-        background-color: #e1f5fe;
-        color: #01579b;
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: bold;
-        display: inline-block;
-        margin: 5px;
+        background-color: #e1f5fe; color: #01579b; padding: 5px 12px;
+        border-radius: 20px; font-size: 14px; font-weight: bold;
+        display: inline-block; margin: 5px;
+    }
+    .project-box {
+        background-color: #e3f2fd; padding: 20px; border-radius: 10px;
+        border: 1px dashed #007bff; text-align: center;
     }
     h1, h2, h3 { color: #0e1117; }
     </style>
@@ -47,30 +42,48 @@ st.sidebar.write("📧 **Email:** isurukihanduwage8804@gmail.com")
 # Main Header
 col1, col2 = st.columns([1, 4])
 with col1:
-    # ඔබේ GitHub එකේ poto1.jpg නමින් තියෙන photo එක මෙතනින් load වේවි
     try:
         st.image("poto1.jpg", width=200, caption="Dinesh Isuru Sampath")
     except:
-        # පින්තූරය නැතිනම් default icon එකක් පෙන්වීමට
         st.image("https://cdn-icons-png.flaticon.com/512/3135/3135715.png", width=200)
 
 with col2:
     st.title("Dinesh Isuru Sampath")
     st.subheader("Senior Software Developer & ML Specialist")
-    st.write("A veteran developer with **10 years of professional experience** in Python, JavaScript, and HTML. Expert in building production-grade systems and scalable ML infrastructure.")
+    st.write("A veteran developer with **10 years of professional experience** in Python, JavaScript, and HTML.")
 
 st.divider()
 
 # Core Skills Section
-st.header("🛠 Tech Stack & Expertise")
+st.header("🛠 Tech Stack")
 st.markdown("""
 <div>
     <span class="skill-tag">Python (Expert)</span>
     <span class="skill-tag">JavaScript (Senior)</span>
     <span class="skill-tag">HTML5 / CSS3</span>
-    <span class="skill-tag">Machine Learning Infrastructure</span>
-    <span class="skill-tag">System Design & Architecture</span>
-    <span class="skill-tag">Git / GitHub Automation</span>
+    <span class="skill-tag">Machine Learning</span>
+    <span class="skill-tag">System Architecture</span>
+</div>
+""", unsafe_allow_html=True)
+
+st.divider()
+
+# --- අලුතින් ඇතුළත් කළ මගේ ව්‍යාපෘති කොටස ---
+st.header("🚀 Featured Live Project")
+st.markdown("""
+<div class="project-box">
+    <h3>🌐 Live Application: SVP Web System</h3>
+    <p>This is a production-ready application hosted on Streamlit Cloud.</p>
+    <a href="https://svpweb.streamlit.app/" target="_blank" style="text-decoration: none;">
+        <button style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+            Open Project Link
+        </button>
+    </a>
+    <div style="margin-top: 15px; font-size: 14px; color: #555;">
+        <b>Login Credentials:</b><br>
+        Username: <code style="background: #fff; padding: 2px 5px;">isurusoft</code> | 
+        Password: <code style="background: #fff; padding: 2px 5px;">123456</code>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -78,42 +91,17 @@ st.divider()
 
 # Experience Section
 st.header("💼 Professional Journey")
-
 experience_html = """
 <div class="job-card">
     <h3>Senior Full-Stack Developer (2015 - Present)</h3>
-    <p><b>10 Years of Industry Mastery:</b> Specialized in creating robust software solutions and shipping production-ready systems for a variety of use cases.</p>
+    <p><b>10 Years of Industry Mastery:</b> Expert in backend (Python) and frontend (JS/HTML) development.</p>
     <ul>
-        <li>Advanced backend development using <b>Python</b>.</li>
-        <li>Dynamic and responsive web interfaces using <b>JavaScript</b> and <b>HTML</b>.</li>
-        <li>Optimizing <b>ML pipelines</b>, including model evaluation, debugging, and fine-tuning.</li>
-        <li>Direct experience in testing and launching scalable software products.</li>
+        <li>Optimizing ML pipelines and production workflows.</li>
+        <li>Direct experience in launching scalable software products.</li>
     </ul>
 </div>
 """
 st.markdown(experience_html, unsafe_allow_html=True)
-
-# Projects Section
-st.header("🚀 Key Projects")
-col_p1, col_p2 = st.columns(2)
-
-with col_p1:
-    with st.expander("Production-Grade ML Script (app.py)", expanded=True):
-        st.write("Core implementation of ML design and infrastructure optimization. This script manages data processing and model deployment workflows.")
-        st.markdown("[🔗 View Source on GitHub](https://github.com/your-github-username)")
-
-with col_p2:
-    with st.expander("Cricket Performance Analytics Tool"):
-        st.write("Specialized analytics engine for T20 match data. Provides player performance metrics and predictive insights.")
-        chart_data = pd.DataFrame({'Match': ['Match 1', 'Match 2', 'Match 3', 'Match 4'], 'Accuracy (%)': [82, 88, 91, 85]})
-        st.line_chart(chart_data, x='Match', y='Accuracy (%)')
-
-st.divider()
-
-# Education & Experience Note
-st.header("🎓 Academic & Practical Foundation")
-st.info("**Equivalent Practical Experience:** 10 Years of verified expertise in software development and design.")
-st.write("Education: G.C.E. Advanced Level (A/L) and Ordinary Level (O/L).")
 
 # Footer
 st.markdown("---")
