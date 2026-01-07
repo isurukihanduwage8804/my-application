@@ -47,12 +47,12 @@ st.sidebar.write("📧 **Email:** isurukihanduwage8804@gmail.com")
 # Main Header
 col1, col2 = st.columns([1, 4])
 with col1:
-    # -------------------------------------------------------------------------
-    # උපදෙස්: ඔබ ලබාදුන් ඡායාරූපය GitHub එකට Upload කර එහි Link එක මෙතනට දාන්න.
-    # දැනට මම ඔබ එවූ ඡායාරූපය වෙනුවට Placeholder එකක් දමා ඇත.
-    # -------------------------------------------------------------------------
-    my_photo_url = "https://raw.githubusercontent.com/your-username/your-repo/main/your-photo.jpg" 
-    st.image(my_photo_url, width=200, caption="Dinesh Isuru Sampath")
+    # ඔබේ GitHub එකේ poto1.jpg නමින් තියෙන photo එක මෙතනින් load වේවි
+    try:
+        st.image("poto1.jpg", width=200, caption="Dinesh Isuru Sampath")
+    except:
+        # පින්තූරය නැතිනම් default icon එකක් පෙන්වීමට
+        st.image("https://cdn-icons-png.flaticon.com/512/3135/3135715.png", width=200)
 
 with col2:
     st.title("Dinesh Isuru Sampath")
