@@ -8,7 +8,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS for a professional look (Fixed the error here)
+# Custom CSS
 st.markdown("""
     <style>
     .main { background-color: #f4f7f6; }
@@ -42,12 +42,11 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### 📞 Contact Details")
 st.sidebar.write("🏠 **Address:** 356/14, Naleen Jayasinghe Road, Pilagoda, Baddegama.")
 st.sidebar.write("📅 **DOB:** 18th April 1988 (Age: 37)")
-st.sidebar.write("📧 **Email:** dinesh.isuru@example.com") # ඔබේ Email එක මෙතනට දාන්න
+st.sidebar.write("📧 **Email:** dinesh.isuru@example.com")
 
 # Main Header
 col1, col2 = st.columns([1, 4])
 with col1:
-    # Profile Picture (Default icon, you can replace with your photo link)
     st.image("https://cdn-icons-png.flaticon.com/512/3135/3135715.png", width=160)
 with col2:
     st.title("Dinesh Isuru Sampath")
@@ -74,7 +73,20 @@ st.divider()
 # Experience Section
 st.header("💼 Professional Journey")
 
-st.markdown(f"""
+# HTML structure for experience card
+experience_html = """
 <div class="job-card">
     <h3>Senior Full-Stack Developer (2015 - Present)</h3>
-    <p><b>
+    <p><b>10 Years of Industry Mastery:</b> Specialized in creating robust software solutions and shipping production-ready systems for a variety of use cases.</p>
+    <ul>
+        <li>Advanced backend development using <b>Python</b>.</li>
+        <li>Dynamic and responsive web interfaces using <b>JavaScript</b> and <b>HTML</b>.</li>
+        <li>Optimizing <b>ML pipelines</b>, including model evaluation, debugging, and fine-tuning.</li>
+        <li>Direct experience in testing and launching scalable software products.</li>
+    </ul>
+</div>
+"""
+st.markdown(experience_html, unsafe_allow_html=True)
+
+# Projects Section
+st.header("🚀 Key Projects")
